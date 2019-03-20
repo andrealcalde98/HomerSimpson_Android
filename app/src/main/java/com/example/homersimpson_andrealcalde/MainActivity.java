@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Animation animrotate = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion1);
                 Animation animull = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion2);
+                Animation animdonut = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion3);
                 if (blau.getVisibility() == View.INVISIBLE) {
                     blau.setVisibility(View.VISIBLE);
                     blau.startAnimation(animrotate);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     vermell.setVisibility(View.VISIBLE);
                     vermell.startAnimation(animrotate);
                     donut.setVisibility(View.VISIBLE);
+                    donut.startAnimation(animdonut);
                     ull.setVisibility(View.VISIBLE);
                     ull.startAnimation(animull);
 
@@ -61,8 +63,11 @@ public class MainActivity extends AppCompatActivity {
                     verd.setVisibility(View.INVISIBLE);
                     vermell.clearAnimation();
                     vermell.setVisibility(View.INVISIBLE);
+                    donut.clearAnimation();
                     donut.setVisibility(View.INVISIBLE);
+                    ull.clearAnimation();
                     ull.setVisibility(View.INVISIBLE);
+
                 }
             }
         });
