@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         animacio = findViewById(R.id.imageTitol);
         AnimationDrawable anim = (AnimationDrawable) animacio.getDrawable();
         anim.start();
+        homer = findViewById(R.id.imageHomer);
         blau = findViewById(R.id.imageBlau);
         blau.setVisibility(View.INVISIBLE);
 
@@ -34,20 +38,28 @@ public class MainActivity extends AppCompatActivity {
         ull = findViewById(R.id.imageUll);
         ull.setVisibility(View.INVISIBLE);
 
-        homer = findViewById(R.id.imageHomer);
-        homer.setOnClickListener(new View.OnClickListener() {
+        animacio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Animation animrotate = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion1);
+                Animation animull = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion2);
                 if (blau.getVisibility() == View.INVISIBLE) {
                     blau.setVisibility(View.VISIBLE);
+                    blau.startAnimation(animrotate);
                     verd.setVisibility(View.VISIBLE);
+                    verd.startAnimation(animrotate);
                     vermell.setVisibility(View.VISIBLE);
+                    vermell.startAnimation(animrotate);
                     donut.setVisibility(View.VISIBLE);
                     ull.setVisibility(View.VISIBLE);
+                    ull.startAnimation(animull);
+
                 } else {
+                    blau.clearAnimation();
                     blau.setVisibility(View.INVISIBLE);
+                    verd.clearAnimation();
                     verd.setVisibility(View.INVISIBLE);
+                    vermell.clearAnimation();
                     vermell.setVisibility(View.INVISIBLE);
                     donut.setVisibility(View.INVISIBLE);
                     ull.setVisibility(View.INVISIBLE);
