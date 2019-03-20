@@ -1,6 +1,7 @@
 package com.example.homersimpson_andrealcalde;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,10 +11,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView animacio, homer, blau, verd, vermell, donut, ull;
+    MediaPlayer media;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,20 @@ public class MainActivity extends AppCompatActivity {
 
         donut = findViewById(R.id.imageDonut);
         donut.setVisibility(View.INVISIBLE);
+        donut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    if (media != null && media.isPlaying())
+                    {
+                        media.stop();
+                    }
+                    else
+                    {
+                        media = MediaPlayer.create(getBaseContext(), R.raw.the_simpsons);
+                        media.start();
+                    }
+                }
+        });
 
         ull = findViewById(R.id.imageUll);
         ull.setVisibility(View.INVISIBLE);
