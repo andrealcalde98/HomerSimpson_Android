@@ -28,10 +28,10 @@
 
     <ImageView
         android:id="@+id/imageBlau"
-        android:layout_width="54dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="336dp"
+        android:layout_width="56dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="320dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/engranatge_blau" />
