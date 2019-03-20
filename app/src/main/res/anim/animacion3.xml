@@ -11,17 +11,18 @@
         />
 
     <translate
-        android:duration="800"
+        android:duration="1200"
         android:fillAfter="true"
         android:fromYDelta="0%p"
         android:toYDelta="30%p"
         android:repeatCount="infinite"/>
 
-    <translate
+    <!---<translate
         android:duration="800"
         android:fillAfter="true"
         android:fromYDelta="0%p"
-        android:startOffset="800"
+        android:startOffset="1200"
         android:toYDelta="-30%p"
-        android:repeatCount="infinite"/>
+        android:repeatCount="infinite"
+        />-->
 </set>

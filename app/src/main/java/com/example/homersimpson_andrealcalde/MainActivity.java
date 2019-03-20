@@ -61,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 Animation animrotate = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion1);
                 Animation animull = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion2);
                 Animation animdonut = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animacion3);
+                Animation animverd = AnimationUtils.loadAnimation(getBaseContext(), R.anim.animverd);
                 if (blau.getVisibility() == View.INVISIBLE) {
                     blau.setVisibility(View.VISIBLE);
                     blau.startAnimation(animrotate);
                     verd.setVisibility(View.VISIBLE);
-                    verd.startAnimation(animrotate);
+                    verd.startAnimation(animverd);
                     vermell.setVisibility(View.VISIBLE);
                     vermell.startAnimation(animrotate);
                     donut.setVisibility(View.VISIBLE);
